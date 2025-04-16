@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: petclinic-deployment
-  namespace: default # We'll deploy Petclinic to the 'default' Kubernetes namespace
+  namespace: apps # We'll deploy Petclinic to the 'default' Kubernetes namespace
 spec:
   replicas: 2 # Run 2 instances (pods) of Petclinic for availability
   selector:
