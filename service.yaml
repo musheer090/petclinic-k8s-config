@@ -8,8 +8,9 @@ spec:
     app: petclinic # Selects pods with the 'app: petclinic' label
   ports:
     - protocol: TCP
-      port: 80       # Expose the service on port 80 (standard HTTP)
-      targetPort: 8080 # Route traffic to port 8080 on the pods
-  # Type LoadBalancer tells AWS to create an Elastic Load Balancer
-  # to expose this service publicly outside the cluster.
-  type: LoadBalancer
+      port: 80       # Cluster-internal port the service listens on
+      targetPort: 8080 # Port inside the container to route traffic to
+      # --- Add this line ---
+      nodePort: 30080  # Specific port exposed on the Node
+  # --- Change this line ---
+  type: NodePort # Exposes the service on each Node's IP at a static port
