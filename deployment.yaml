@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: petclinic-deployment
+  namespace: default # We'll deploy Petclinic to the 'default' Kubernetes namespace
+spec:
+  replicas: 2 # Run 2 instances (pods) of Petclinic for availability
+  selector:
+    matchLabels:
+      app: petclinic # Label to identify pods belonging to this deployment
+  template:
+    metadata:
+      labels:
+        app: petclinic # Apply the label to the pods
+    spec:
+      containers:
+      - name: petclinic-container
+        # !!! VERY IMPORTANT: Use the ECR URI from Musheer and the :latest tag !!!
+        image: 730335384723.dkr.ecr.ap-south-1.amazonaws.com/my-hf-model:latest
+        ports:
+        - containerPort: 8080 # Petclinic runs on port 8080 inside the container
