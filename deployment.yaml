@@ -16,6 +16,6 @@ spec:
       containers:
       - name: petclinic-container
         # !!! VERY IMPORTANT: Use the ECR URI from Musheer and the :latest tag !!!
-        image: 730335384723.dkr.ecr.ap-south-1.amazonaws.com/kubeguard-petclinic-app:pc-d3a6b45
+        image: 730335384723.dkr.ecr.ap-south-1.amazonaws.com/kubeguard-petclinic-app:pc-eda614c
         ports:
         - containerPort: 8080 # Petclinic runs on port 8080 inside the container
