@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: petclinic-container
-        image: 730335384723.dkr.ecr.ap-south-1.amazonaws.com/kubeguard-petclinic-app:pc-063a988
+        image: 730335384723.dkr.ecr.ap-south-1.amazonaws.com/kubeguard-petclinic-app:pc-f40a2ae
         ports:
         - containerPort: 8080
